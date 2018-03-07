@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/Morjodrom/fetcheer#readme",
   "dependencies": {
-    "jsend-client": "0.0.1"
+    "jsend-client": "git+https://github.com/Morjodrom/jsend-client.git"
   }
 }
