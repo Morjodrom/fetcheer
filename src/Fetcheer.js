@@ -1,6 +1,6 @@
 import JSend from "jsend-client";
 
-export default class Fetcher {
+export default class Fetcheer {
 	static request(input, init = {}){
 		return fetch(input, init)
 	}
@@ -15,16 +15,16 @@ export default class Fetcher {
 		return Promise.reject(`Server responded with ${response.status} code`)
 	}
 
-	static getPostOptions(body, init = Fetcher.defaults){
+	static getPostOptions(body, init = Fetcheer.defaults){
 		init.method = 'post'
 		init.body = body
 
 		return init
 	}
 
-	static getJsend(input, init = Fetcher.defaults) {
-		return Fetcher.request(input, init)
-			.then(Fetcher.check200)
+	static getJsend(input, init = Fetcheer.defaults) {
+		return Fetcheer.request(input, init)
+			.then(Fetcheer.check200)
 			.then(response => response.json())
 			.then(JSend.parse)
 			.catch(error => {
@@ -45,10 +45,10 @@ export default class Fetcher {
 			const notRecursive = [File, Array]
 			const goDeeper = obj[property] instanceof Object && !(notRecursive.indexOf(obj[property].constructor) > -1)
 			if (goDeeper) {
-				Fetcher.objectToFormData(obj[property], formData, property)
+				Fetcheer.objectToFormData(obj[property], formData, property)
 			}
 			else if (Array.isArray(obj[property])) {
-				obj[property].forEach((child, index) => Fetcher.objectToFormData(child, formData, `${formKey}[${index}]`))
+				obj[property].forEach((child, index) => Fetcheer.objectToFormData(child, formData, `${formKey}[${index}]`))
 			}
 			else {
 				const pseudoBool = {'true': 1, 'false': 0}

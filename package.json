@@ -1,6 +1,6 @@
 {
   "name": "fetcheer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Small wrapper over browser fetch function",
   "main": "./src/Fetcheer",
   "scripts": {
