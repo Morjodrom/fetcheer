@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Morjodrom/fetcheer/issues"
   },
-  "homepage": "https://github.com/Morjodrom/fetcheer#readme"
+  "homepage": "https://github.com/Morjodrom/fetcheer#readme",
+  "dependencies": {
+    "jsend-client": "0.0.1"
+  }
 }

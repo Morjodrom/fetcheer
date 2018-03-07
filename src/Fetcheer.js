@@ -1,4 +1,4 @@
-import JSend from "./JSend";
+import JSend from "jsend-client";
 
 export default class Fetcher {
 	static request(input, init = {}){
