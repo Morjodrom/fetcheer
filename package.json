@@ -1,0 +1,23 @@
+{
+  "name": "fetcheer",
+  "version": "0.0.1",
+  "description": "Small wrapper over browser fetch function",
+  "main": "./src/Fetcheer",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morjodrom/fetcheer.git"
+  },
+  "keywords": [
+    "fetch",
+    "wrapper"
+  ],
+  "author": "morjodrom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Morjodrom/fetcheer/issues"
+  },
+  "homepage": "https://github.com/Morjodrom/fetcheer#readme"
+}
