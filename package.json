@@ -1,7 +1,7 @@
 {
   "name": "fetcheer",
-  "version": "0.0.2",
-  "description": "Small wrapper over browser fetch function",
+  "version": "0.1.0",
+  "description": "Small JSend compatible wrapper over browser fetch function",
   "main": "./src/Fetcheer",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "fetch",
-    "wrapper"
+    "wrapper",
+	"jsend"
   ],
   "author": "morjodrom",
   "license": "MIT",
