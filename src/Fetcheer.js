@@ -1,10 +1,23 @@
 import JSend from "jsend-client";
 
 export default class Fetcheer {
+	/**
+	 * Purely a wrapper over fetch
+	 *
+	 * @param input
+	 * @param init
+	 * @return {Promise<Response>}
+	 */
 	static request(input, init = {}){
 		return fetch(input, init)
 	}
 
+	/**
+	 * Checks if the response is 200 and returns reject otherwise
+	 *
+	 * @param response
+	 * @return {*}
+	 */
 	static check200(response){
 		if(response.ok){
 			return Promise.resolve(response)
@@ -15,6 +28,13 @@ export default class Fetcheer {
 		return Promise.reject(`Server responded with ${response.status} code`)
 	}
 
+	/**
+	 * Small wrapper to define post query options
+	 *
+	 * @param body
+	 * @param init
+	 * @return {*}
+	 */
 	static getPostOptions(body, init = Fetcheer.defaults){
 		init.method = 'post'
 		init.body = body
@@ -22,6 +42,14 @@ export default class Fetcheer {
 		return init
 	}
 
+	/**
+	 * Performs a request and handles the response in JSend format
+	 *
+	 *
+	 * @param input
+	 * @param init
+	 * @return {Promise<any>}
+	 */
 	static getJsend(input, init = Fetcheer.defaults) {
 		return Fetcheer.request(input, init)
 			.then(Fetcheer.check200)
@@ -32,12 +60,27 @@ export default class Fetcheer {
 			})
 	}
 
+	/**
+	 * Defaults to eliminate code duplication
+	 *
+	 * @return {{credentials: string}}
+	 */
 	static get defaults(){
 		return {
 			credentials: 'same-origin'
 		}
 	}
 
+	/**
+	 * Converts JS objects of arbitrary depth to a form data object recursively.
+	 *
+	 * Handles files, converts boolean to POST usable 0 and 1
+	 *
+	 * @param {Object} obj
+	 * @param {FormData} [formData = new FormData]
+	 * @param {string} namespace
+	 * @return {FormData}
+	 */
 	static objectToFormData(obj, formData = new FormData(), namespace = null) {
 		for (let property of Object.keys(obj)) {
 			let formKey = namespace ? `${namespace}[${property}]` : property
