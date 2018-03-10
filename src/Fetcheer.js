@@ -61,6 +61,22 @@ export default class Fetcheer {
 	}
 
 	/**
+	 * Rejects the promise if jsend is not successful
+	 *
+	 * @param jsend
+	 * @return {Promise|JSend}
+	 */
+	static checkJsendSuccess(jsend){
+		if(jsend.fail){
+			return Promise.reject(jsend.data)
+		}
+		else if(jsend.error){
+			return Promise.reject(jsend.error)
+		}
+		return jsend
+	}
+
+	/**
 	 * Defaults to eliminate code duplication
 	 *
 	 * @return {{credentials: string}}
