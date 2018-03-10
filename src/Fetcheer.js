@@ -113,7 +113,7 @@ export default class Fetcheer {
 				const pseudoBool = {'true': 1, 'false': 0}
 				// todo - actually, hardcode
 				if (obj[property] !== void(0) && obj[property] !== null) {
-					const value = pseudoBool[obj[property]] || obj[property]
+					const value = pseudoBool.hasOwnProperty(obj[property]) ? pseudoBool[obj[property]] : obj[property]
 					formData.append(formKey, value)
 				}
 			}
