@@ -64,7 +64,7 @@ export default class Fetcheer {
 	 * Rejects the promise if jsend is not successful
 	 *
 	 * @param jsend
-	 * @return {Promise|JSend}
+	 * @return {Promise|null|Array|Object}
 	 */
 	static checkJsendSuccess(jsend){
 		if(jsend.fail){
@@ -73,7 +73,7 @@ export default class Fetcheer {
 		else if(jsend.error){
 			return Promise.reject(jsend.error)
 		}
-		return jsend
+		return jsend.data
 	}
 
 	/**
