@@ -3,6 +3,9 @@
 A small JS fetch wrapper to work in a couple with [JSend][1].
 Feel free to use as a boilerplate and a plain extension point.
 
+###
+##! The library is unstable and not intended to a direct usage, please, consider using it as a boilerplate.
+
 [1]: http://labs.omniti.com/labs/jsend
 
 # Basic usage
@@ -48,4 +51,18 @@ return Fetcheer.getJsend('/user-save-handler/', postOptions)
     .then()
     // ...
     .catch()
+```
+
+# JSend handling sugar
+```javascript
+import Fetcheer from 'fetcheer'
+Fetcheer.getJsend('some url')
+.then(Fetcheer.checkJsendSuccess) // check if the jsend has success status
+.then(data => {
+   // this code is called ONLY for successful a JSend
+})
+.catch(/** @param {string|string[]|*} error - message from jsend with error status or data from jsend fail */
+    error => { 
+})
+
 ```
