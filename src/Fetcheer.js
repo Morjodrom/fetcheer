@@ -71,7 +71,7 @@ export default class Fetcheer {
 			return Promise.reject(jsend.data)
 		}
 		else if(jsend.error){
-			return Promise.reject(jsend.error)
+			return Promise.reject(jsend.message)
 		}
 		return jsend.data
 	}
