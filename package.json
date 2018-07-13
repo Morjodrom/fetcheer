@@ -1,6 +1,6 @@
 {
   "name": "fetcheer",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "Small JSend compatible wrapper over browser fetch function",
   "main": "./src/Fetcheer",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/Morjodrom/fetcheer#readme",
   "dependencies": {
-    "jsend-client": "git+https://github.com/Morjodrom/jsend-client.git"
+    "jsend-client": ">=0.9.0"
   }
 }

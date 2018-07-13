@@ -92,6 +92,7 @@ export default class Fetcheer {
 	 *
 	 * Handles files, converts boolean to POST usable 0 and 1
 	 *
+	 * @deprecated - is distorting the data
 	 * @param {Object} obj
 	 * @param {FormData} [formData = new FormData]
 	 * @param {string} namespace
