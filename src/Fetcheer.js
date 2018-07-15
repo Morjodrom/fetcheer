@@ -8,7 +8,7 @@ export default class Fetcheer {
 	 * @param init
 	 * @return {Promise<Response>}
 	 */
-	static request(input, init = {}){
+	static request(input, init = Fetcheer.defaults){
 		return fetch(input, init)
 	}
 
@@ -48,7 +48,7 @@ export default class Fetcheer {
 	 *
 	 * @param input
 	 * @param init
-	 * @return {Promise<any>}
+	 * @return {Promise<*>}
 	 */
 	static getJsend(input, init = Fetcheer.defaults) {
 		return Fetcheer.request(input, init)
